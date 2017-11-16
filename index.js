@@ -11,13 +11,35 @@ function getFinance(options, cb) {
 function getEconomics(options, cb) {
   let required = ['category', 'country', 'indicatorName', 'apiKey'];
   utils.checkOptions(required, options);
-  return utils.getDatavideApi(`economics/${options.category}/${options.country}/${options.indicatorName}`, options.key, cb)
+  return utils.getDatavideApi(`economics/${options.category}/${options.country}/${options.indicatorName}`, options.apiKey, cb)
 }
 
 function getCompanies(options, cb) {
   let required = ['category', 'entity', 'period', 'apiKey'];
   utils.checkOptions(required, options);
-  return utils.getDatavideApi(`finance/${options.category}/${options.symbol}/${options.period}`, options.key, cb)
+  return utils.getDatavideApi(`finance/${options.category}/${options.symbol}/${options.period}`, options.apiKey, cb)
+}
+
+function getSports(options, cb) {
+  let required = ['league', 'category']
+  utils.checkOptions(required, options);
+  let request = ""
+
+  if (options.category == "teams") {
+    request = `sports/${options.league}/teams`
+  } else {
+    if ((options.league == "nfl") || (options.league == "mlb")) {
+      if (options.category == "players") {
+        request = `sports/${options.league}/teams`
+      } else {
+        request = `sports/${options.league}/${options.position}/${options.entity}`
+      }
+    } else {
+      
+    }
+  }
+
+  return utils.getDatavideApi(request, options.apiKey, cb)
 }
 
 exports.getFinance = getFinance

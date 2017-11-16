@@ -27,19 +27,18 @@ $ npm install datavide --save
 #### Example using async and await
 ```js
 const datavide = require('datavide');
-const KEY      = 'YOUR_KEY_HERE';
 
 async function bitcoinPrice() {
   let options = {
                   'category': 'crypto',
                   'entity'  : 'bitcoin',
                   'period'  : 'last',
-                  'apiKey'  : KEY
+                  'apiKey'  : 'YOUR_KEY_HERE'
                 };
 
   try {
     // get bitcoin's last(most recent) data entry.
-    let bitcoin = await datavide.getCompanies(options);
+    let bitcoin = await datavide.getFinance(options);
     // console log the value from data[0](most recent data entry)
     console.log(bitcoin.data[0].value);
   } catch(err) {
@@ -55,14 +54,13 @@ Using Node v8+ you can run the above example with `node file.js`
 #### Example using .then promise notation
 ```js
 const datavide = require('datavide');
-const KEY      = 'YOUR_KEY_HERE';
 
 function bitcoinPrice() {
   let options = {
                   'category': 'crypto',
                   'entity'  : 'bitcoin',
                   'period'  : 'last',
-                  'apiKey'  : KEY
+                  'apiKey'  : 'YOUR_KEY_HERE'
                 };
 
   datavide.getFinance(options)
@@ -81,14 +79,13 @@ bitcoinPrice();
 #### Example using a callback
 ```js
 const datavide = require('datavide');
-const KEY      = 'YOUR_KEY_HERE';
 
 function bitcoinPrice() {
   let options = {
                   'category': 'crypto',
                   'entity'  : 'bitcoin',
                   'period'  : 'last',
-                  'apiKey'  : KEY
+                  'apiKey'  : 'YOUR_KEY_HERE';
                 };
 
   datavide.getFinance(options, function(err, bitcoin) {
@@ -109,21 +106,11 @@ bitcoinPrice();
 ```
 Using Node v6+ you can run the two above examples with `node file.js`
 
-## Available functions
-For data examples check out the datavide documentation: <http://www.datavide.com/docs>
-#### Parameters
-- category - the category of the data you want. (eg. 'equity')
-- entity   - the specific entity you want data for. (eg. 'aapl')
-- period   - the amount of historical data you want. (eg. 'week')
-
-#### Functions
-- **getFinance**(*options, callback*)
-- **getEconomic**(*options, callback*)
+## Documentation
+  See full documentation at: <http://www.datavide.com/docs/libraries>
 
 ## People
-
   The current lead maintainer is [Jack Isherwood]
 
 ## License
-
   [MIT]
