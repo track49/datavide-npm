@@ -126,4 +126,4 @@ For data examples check out the datavide documentation: <http://www.datavide.com
 
 ## License
 
-  [ISC](LICENSE.md)
+  [MIT]
