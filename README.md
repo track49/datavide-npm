@@ -28,7 +28,7 @@ $ npm install datavide --save
 ```js
 const datavide = require('datavide');
 
-async function bitcoinPrice() {
+async function bitcoin() {
   let options = {
                   'category': 'crypto',
                   'entity'  : 'bitcoin',
@@ -40,23 +40,23 @@ async function bitcoinPrice() {
     // get bitcoin's last(most recent) data entry.
     let bitcoin = await datavide.getFinance(options);
     // console log the value from data[0](most recent data entry)
-    console.log(bitcoin.data[0].value);
+    console.log(bitcoin.data[0]);
   } catch(err) {
     // catch and print error
     console.log(err);
   }
 }
 
-bitcoinPrice();
+bitcoin();
 ```
-Using Node v8+ you can run the above example with `node file.js`
+Using Node v7+ you can run the above example with `node file.js`
 
 #### Example using .then promise notation
 ```js
 const datavide = require('datavide');
 
-function bitcoinPrice() {
-  let options = {
+function bitcoin() {
+  var options = {
                   'category': 'crypto',
                   'entity'  : 'bitcoin',
                   'period'  : 'last',
@@ -66,26 +66,26 @@ function bitcoinPrice() {
   datavide.getFinance(options)
     .then((bitcoin) => {
       // On resolve print bitcoins value
-      console.log(bitcoin.data[0].value);
+      console.log(bitcoin.data[0]);
     }, (err) => {
       // On reject print error
       console.log(err);
     });
 }
 
-bitcoinPrice();
+bitcoin();
 ```
 
 #### Example using a callback
 ```js
 const datavide = require('datavide');
 
-function bitcoinPrice() {
-  let options = {
+function bitcoin() {
+  var options = {
                   'category': 'crypto',
                   'entity'  : 'bitcoin',
                   'period'  : 'last',
-                  'apiKey'  : 'YOUR_KEY_HERE';
+                  'apiKey'  : 'YOUR_KEY_HERE'
                 };
 
   datavide.getFinance(options, function(err, bitcoin) {
@@ -98,13 +98,13 @@ function bitcoinPrice() {
     }
 
     // on success print the value
-    console.log(bitcoin.data[0].value);
+    console.log(bitcoin.data[0]);
   })
 }
 
-bitcoinPrice();
+bitcoin();
 ```
-Using Node v6+ you can run the two above examples with `node file.js`
+Using Node v4+ you can run the two above examples with `node file.js`
 
 ## Documentation
   See full documentation at: <http://www.datavide.com/docs/libraries>

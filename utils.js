@@ -1,9 +1,14 @@
+"use strict"
+
 const request = require('request-promise');
 const _       = require('lodash');
 
 // Request the datavide API for <path> with given key, return the result as JSON
 // Supports both promises and callbacks
-function getDatavideApi(path, key, cb = function() {}) {
+function getDatavideApi(path, key, cb) {
+
+  cb = cb == undefined ? function() {} : cb
+
   return new Promise(function (resolve, reject) {
     request(`http://api.datavide.com/api/${path}?apikey=${key}`)
       .then(function (res) {
