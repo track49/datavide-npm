@@ -23,8 +23,6 @@ function getCompanies(options, cb) {
 }
 
 function getSports(options, cb) {
-  // let required = ['league', 'category', 'apiKey']
-  // utils.checkOptions(required, options);
 
   if (options.category == "teams") {
     request = `sports/${options.league}/teams`
@@ -47,7 +45,7 @@ function getSports(options, cb) {
   return utils.getDatavideApi(request, options.apiKey, cb)
 }
 
-exports.getFinance = getFinance
+exports.getFinance   = getFinance
 exports.getEconomics = getEconomics
 exports.getCompanies = getCompanies
-exports.getSports = getSports
+exports.getSports    = getSports
