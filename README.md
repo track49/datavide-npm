@@ -39,7 +39,7 @@ async function bitcoin() {
   try {
     // get bitcoin's last(most recent) data entry.
     let bitcoin = await datavide.getFinance(options);
-    // console log the value from data[0](most recent data entry)
+    // print data[0](most recent data entry)
     console.log(bitcoin.data[0]);
   } catch(err) {
     // catch and print error
@@ -64,13 +64,13 @@ function bitcoin() {
                 };
 
   datavide.getFinance(options)
-    .then((bitcoin) => {
-      // On resolve print bitcoins value
-      console.log(bitcoin.data[0]);
-    }, (err) => {
-      // On reject print error
-      console.log(err);
-    });
+          .then((bitcoin) => {
+            // On resolve print bitcoins most recent entry
+            console.log(bitcoin.data[0]);
+          }, (err) => {
+            // On reject print error
+            console.log(err);
+          });
 }
 
 bitcoin();
@@ -97,7 +97,7 @@ function bitcoin() {
       return;
     }
 
-    // on success print the value
+    // on success print the most recent entry
     console.log(bitcoin.data[0]);
   })
 }
