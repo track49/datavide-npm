@@ -33,7 +33,7 @@ async function bitcoin() {
                   'category': 'crypto',
                   'entity'  : 'bitcoin',
                   'period'  : 'last',
-                  'apiKey'  : 'YOUR_KEY_HERE'
+                  'apikey'  : 'YOUR_KEY_HERE'
                 };
 
   try {
@@ -60,7 +60,7 @@ function bitcoin() {
                   'category': 'crypto',
                   'entity'  : 'bitcoin',
                   'period'  : 'last',
-                  'apiKey'  : 'YOUR_KEY_HERE'
+                  'apikey'  : 'YOUR_KEY_HERE'
                 };
 
   datavide.getFinance(options)
@@ -85,7 +85,7 @@ function bitcoin() {
                   'category': 'crypto',
                   'entity'  : 'bitcoin',
                   'period'  : 'last',
-                  'apiKey'  : 'YOUR_KEY_HERE'
+                  'apikey'  : 'YOUR_KEY_HERE'
                 };
 
   datavide.getFinance(options, function(err, bitcoin) {

@@ -23,6 +23,7 @@ function getCompanies(options, cb) {
 }
 
 function getSports(options, cb) {
+  let request = ""
 
   if (options.category == "teams") {
     request = `sports/${options.league}/teams`
