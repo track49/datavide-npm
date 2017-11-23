@@ -2,6 +2,28 @@
 
 const utils = require("./utils.js")
 
+
+class Finance {
+
+  constructor(apikey) {
+    this.apikey = apikey;
+  }
+
+  get(params, cb) {
+
+        // required fields in the options object
+        let required = ['category', 'entity'];
+        // checkOptions verifies that the required fields are present.
+        utils.checkOptions(required, params);
+
+        params.period = params.period === undefined ? 'last' : params.period
+
+        return utils.getDatavideApi(`finance/${params.category}/${params.entity}/${params.period}`, this.apikey, cb);
+
+  }
+
+}
+
 function getFinance(options, cb) {
   // required fields in the options object
   let required = ['category', 'entity', 'period', 'apikey'];
@@ -55,3 +77,5 @@ exports.getEconomics = getEconomics
 exports.getCompanies = getCompanies
 exports.getSports    = getSports
 exports.getUsage     = getUsage
+
+exports.Finance     = Finance
