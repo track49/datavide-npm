@@ -113,4 +113,4 @@ Using Node v4+ you can run the two above examples with `node file.js`
   The current lead maintainer is [Jack Isherwood]
 
 ## License
-  [MIT]
+  [MIT](LICENSE)
