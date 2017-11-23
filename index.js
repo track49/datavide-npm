@@ -22,6 +22,39 @@ class Finance {
 
   }
 
+  list(category, cb) {
+    return utils.getDatavideApi(`finance/${category}/list`, this.apikey, cb);
+  }
+
+}
+
+class Economics {
+
+  constructor(apikey) {
+    this.apikey = apikey;
+  }
+
+  get(params, cb) {
+
+        // required fields in the options object
+        let required = ['category', 'country'];
+        // checkOptions verifies that the required fields are present.
+        utils.checkOptions(required, params);
+
+        params.period = params.period === undefined ? 'last' : params.period
+
+        return utils.getDatavideApi(`finance/${params.category}/${params.country}/${params.period}`, this.apikey, cb);
+
+  }
+
+  listCountries( , cb) {
+    return utils.getDatavideApi(`finance/${category}/list`, this.apikey, cb);
+  }
+
+  listIndicators(country, cb) {
+    return utils.getDatavideApi(`finance/${category}/list`, this.apikey, cb);
+  }
+
 }
 
 function getFinance(options, cb) {

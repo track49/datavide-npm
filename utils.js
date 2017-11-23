@@ -6,7 +6,7 @@ const request = require('request-promise');
 // Supports both promises and callbacks
 function getDatavideApi(path, key, cb) {
 
-  cb = cb == undefined ? function() {} : cb
+  let callback = cb === null ? function() {} : cb
 
   return new Promise(function (resolve, reject) {
     request(`http://api.datavide.com/api/${path}?apikey=${key}`)
@@ -15,18 +15,18 @@ function getDatavideApi(path, key, cb) {
 
         if (typeof data.status !== 'undefined') {
           reject(`Error: status code ${data.status}, ${data.title}`)
-          return cb(`Error: status code ${data.status}, ${data.title}`)
+          return callback(`Error: status code ${data.status}, ${data.title}`)
         }
 
         // resolve promise
         resolve(data)
         // return callback
-        return cb(null, data)
+        return callback(null, data)
       }, function (err) {
         // reject as promise
         reject(err)
         // return callback using 'error-first-pattern'
-        return cb(err)
+        return callback(err)
       });
   })
 }
