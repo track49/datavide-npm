@@ -6,7 +6,7 @@ const request = require('request-promise');
 // Supports both promises and callbacks
 function getDatavideApi(path, key, cb) {
 
-  let callback = cb === null ? function() {} : cb
+  let callback = cb == null ? function() {} : cb
 
   return new Promise(function (resolve, reject) {
     request(`http://api.datavide.com/api/${path}?apikey=${key}`)
