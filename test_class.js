@@ -9,9 +9,9 @@ const datavide = require("./new_index.js")
 // })
 
 async function test() {
-  let crypto = new datavide.Nba("234ECBC94B859DBAC7A6F0B5E910759C")
+  let crypto = new datavide.Nfl("234ECBC94B859DBAC7A6F0B5E910759C")
 
-  let res = await crypto.getPlayer("kevin durant")
+  let res = await crypto.listTeams()
 
   console.log(res)
 }

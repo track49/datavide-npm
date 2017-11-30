@@ -43,14 +43,14 @@ class Crypto extends Finance {
      *
      * @params {String} entity   required The entity the data returned corresponds to
      * @params {String} period   optional The time period of the data returned ('last', 'week', 'month' or 'year')
-     * @params {String} callback optional Callback to handle response
+     * @params {Function} callback optional Callback to handle response
      *
      * @funcSample Crypto.get(entity, period, callback)
      *
-     * @returnval {String} category
-     * @returnval {String} period
-     * @returnval {String} entity
-     * @returnval {Array}  data
+     * @returnval {String} category Category of returned data (crypto)
+     * @returnval {String} period   Period of the returned data
+     * @returnval {String} entity   Name of the entity the data corresponds to
+     * @returnval {Array}  data     Array of data for <entity> from the last <period>
      *
      * @funcReturn:
           {
@@ -72,12 +72,12 @@ class Crypto extends Finance {
         * @funcName list
         * @group    Crypto
         *
-        * @params {String} callback optional Callback to handle response
+        * @params {Function} callback optional Callback to handle response
         *
         * @funcSample Crypto.list(callback)
         *
-        * @returnval {String} category
-        * @returnval {Array}  entities
+        * @returnval {String} category Category of returned data (crypto)
+        * @returnval {Array}  entities List of available crypto currencies
         *
         * @funcReturn:
              {
@@ -103,14 +103,14 @@ class Bond extends Finance {
      *
      * @params {String} entity   required The entity the data returned corresponds to
      * @params {String} period   optional The time period of the data returned ('last', 'week', 'month' or 'year')
-     * @params {String} callback optional Callback to handle response
+     * @params {Function} callback optional Callback to handle response
      *
      * @funcSample Bond.get(entity, period, callback)
      *
-     * @returnval {String} category
-     * @returnval {String} period
-     * @returnval {String} entity
-     * @returnval {Array}  data
+     * @returnval {String} category Category of returned data (bond)
+     * @returnval {String} period   Period of the returned data
+     * @returnval {String} entity   Name of the entity the data corresponds to
+     * @returnval {Array}  data     Array of data for <entity> from the last <period>
      *
      * @funcReturn:
           {
@@ -132,12 +132,12 @@ class Bond extends Finance {
         * @funcName list
         * @group    Bond
         *
-        * @params {String} callback optional Callback to handle response
+        * @params {Function} callback optional Callback to handle response
         *
         * @funcSample Bond.list(callback)
         *
-        * @returnval {String} category
-        * @returnval {Array}  entities
+        * @returnval {String} category Category of returned data (bond)
+        * @returnval {Array}  entities List of available bonds
         *
         * @funcReturn:
              {
@@ -165,14 +165,14 @@ class Equity extends Finance {
      *
      * @params {String} entity   required The entity the data returned corresponds to
      * @params {String} period   optional The time period of the data returned ('last', 'week', 'month' or 'year')
-     * @params {String} callback optional Callback to handle response
+     * @params {Function} callback optional Callback to handle response
      *
      * @funcSample Equity.get(entity, period, callback)
      *
-     * @returnval {String} category
-     * @returnval {String} period
-     * @returnval {String} entity
-     * @returnval {Array}  data
+     * @returnval {String} category Category of returned data (equity)
+     * @returnval {String} period   Period of the returned data
+     * @returnval {String} entity   Name of the entity the data corresponds to
+     * @returnval {Array}  data     Array of data for <entity> from the last <period>
      *
      * @funcReturn:
           {
@@ -205,12 +205,12 @@ class Equity extends Finance {
         * @funcName list
         * @group    Equity
         *
-        * @params {String} callback optional Callback to handle response
+        * @params {Function} callback optional Callback to handle response
         *
         * @funcSample Equity.list(callback)
         *
-        * @returnval {String} category
-        * @returnval {Array}  entities
+        * @returnval {String} category Category of returned data (equity)
+        * @returnval {Array}  entities List of available equities
         *
         * @funcReturn:
              {
@@ -239,14 +239,14 @@ class Commodity extends Finance {
      *
      * @params {String} entity   required The entity the data returned corresponds to
      * @params {String} period   optional The time period of the data returned ('last', 'week', 'month' or 'year')
-     * @params {String} callback optional Callback to handle response
+     * @params {Function} callback optional Callback to handle response
      *
      * @funcSample Commodity.get(entity, period, callback)
      *
-     * @returnval {String} category
-     * @returnval {String} period
-     * @returnval {String} entity
-     * @returnval {Array}  data
+     * @returnval {String} category Category of returned data (commodity)
+     * @returnval {String} period   Period of the returned data
+     * @returnval {String} entity   Name of the entity the data corresponds to
+     * @returnval {Array}  data     Array of data for <entity> from the last <period>
      *
      * @funcReturn:
           {
@@ -270,12 +270,12 @@ class Commodity extends Finance {
         * @funcName list
         * @group    Commodity
         *
-        * @params {String} callback optional Callback to handle response
+        * @params {Function} callback optional Callback to handle response
         *
         * @funcSample Commodity.list(callback)
         *
-        * @returnval {String} category
-        * @returnval {Array}  entities
+        * @returnval {String} category Category of returned data (commodity)
+        * @returnval {Array}  entities List of available commodities
         *
         * @funcReturn:
              {
@@ -307,14 +307,14 @@ class Currency extends Finance {
      *
      * @params {String} entity   required The entity the data returned corresponds to
      * @params {String} period   optional The time period of the data returned ('last', 'week', 'month' or 'year')
-     * @params {String} callback optional Callback to handle response
+     * @params {Function} callback optional Callback to handle response
      *
      * @funcSample Currency.get(entity, period, callback)
      *
-     * @returnval {String} category
-     * @returnval {String} period
-     * @returnval {String} entity
-     * @returnval {Array}  data
+     * @returnval {String} category Category of returned data (currency)
+     * @returnval {String} period   Period of the returned data
+     * @returnval {String} entity   Name of the entity the data corresponds to
+     * @returnval {Array}  data     Array of data for <entity> from the last <period>
      *
      * @funcReturn:
           {
@@ -336,12 +336,12 @@ class Currency extends Finance {
         * @funcName list
         * @group    Currency
         *
-        * @params {String} callback optional Callback to handle response
+        * @params {Function} callback optional Callback to handle response
         *
         * @funcSample Currency.list(callback)
         *
-        * @returnval {String} category
-        * @returnval {Array}  entities
+        * @returnval {String} category Category of returned data (currency)
+        * @returnval {Array}  entities List of available currencies
         *
         * @funcReturn:
              {
@@ -375,14 +375,14 @@ class Future extends Finance {
      *
      * @params {String} entity   required The entity the data returned corresponds to
      * @params {String} period   optional The time period of the data returned ('last', 'week', 'month' or 'year')
-     * @params {String} callback optional Callback to handle response
+     * @params {Function} callback optional Callback to handle response
      *
      * @funcSample Future.get(entity, period, callback)
      *
-     * @returnval {String} category
-     * @returnval {String} period
-     * @returnval {String} entity
-     * @returnval {Array}  data
+     * @returnval {String} category Category of returned data (future)
+     * @returnval {String} period   Period of the returned data
+     * @returnval {String} entity   Name of the entity the data corresponds to
+     * @returnval {Array}  data     Array of data for <entity> from the last <period>
      *
      * @funcReturn:
           {
@@ -404,12 +404,12 @@ class Future extends Finance {
         * @funcName list
         * @group    Future
         *
-        * @params {String} callback optional Callback to handle response
+        * @params {Function} callback optional Callback to handle response
         *
         * @funcSample Future.list(callback)
         *
-        * @returnval {String} category
-        * @returnval {Array}  entities
+        * @returnval {String} category Category of returned data (future)
+        * @returnval {Array}  entities List of available futures
         *
         * @funcReturn:
              {
@@ -459,14 +459,14 @@ class Indicators extends Economics {
      * @params {String} country   required The country the data returned corresponds to
      * @params {String} indicator required The indicator the data returned corresponds to
      * @params {String} period    optional The time period of the data returned ('last', 'week', 'month' or 'year')
-     * @params {String} callback  optional Callback to handle response
+     * @params {Function} callback  optional Callback to handle response
      *
      * @funcSample Indicators.get(country, indicator, period, callback)
      *
-     * @returnval {String} country
-     * @returnval {String} period
-     * @returnval {String} entity
-     * @returnval {Array}  data
+     * @returnval {String} country Country that the data corresponds to
+     * @returnval {String} period  Period of the returned data
+     * @returnval {String} entity  Name of the entity the data corresponds to
+     * @returnval {Array}  data    Array of data for <entity> from the last <period>
      *
      * @funcReturn:
         {
@@ -492,12 +492,13 @@ class Indicators extends Economics {
         * @funcName list
         * @group    Indicators
         *
-        * @params {String} callback optional Callback to handle response
+        * @params {String}   country  required The country the data returned corresponds to
+        * @params {Function} callback optional Callback to handle response
         *
-        * @funcSample Indicators.list(callback)
+        * @funcSample Indicators.list(country, callback)
         *
-        * @returnval {String} country
-        * @returnval {Array}  entities
+        * @returnval {String} country Country that the data corresponds to
+        * @returnval {Array}  entities List of available indicators for country
         *
         * @funcReturn:
         {
@@ -546,13 +547,13 @@ class Nba extends Sports {
      * @funcName getTeam
      * @group    NBA
      *
-     * @params {String} team      required The team the data returned corresponds to
-     * @params {String} callback  optional Callback to handle response
+     * @params {String}   team      required The team the data returned corresponds to
+     * @params {Function} callback  optional Callback to handle response
      *
-     * @funcSample NBA.getTeam(team, callback)
+     * @funcSample Nba.getTeam(team, callback)
      *
-     * @returnval {String} team
-     * @returnval {Array}  players
+     * @returnval {String} team    Team the returned data corresponds to
+     * @returnval {Array}  players The players from <team> and their stats
      *
      * @funcReturn:
           {
@@ -597,15 +598,24 @@ class Nba extends Sports {
         * @funcName getPlayer
         * @group    NBA
         *
-        * @params {String} player    required The country the data returned corresponds to
-        * @params {String} callback  optional Callback to handle response
+        * @params {String} player      required The player the data returned corresponds to
+        * @params {Function} callback  optional Callback to handle response
         *
-        * @funcSample NBA.getPlayer(player, callback)
+        * @funcSample Nba.getPlayer(player, callback)
         *
-        * @returnval {String} country
-        * @returnval {String} period
-        * @returnval {String} entity
-        * @returnval {Array}  data
+        * @returnval {Integer} gp      Games played
+        * @returnval {String}  3pm-3pa Average 3 point shots made vs attempted per game
+        * @returnval {String}  fgm-fga Average field goals made vs attempted per game
+        * @returnval {String}  name    Player name
+        * @returnval {Float}   pts     Average points per game
+        * @returnval {String}  pos     Position
+        * @returnval {String}  team    Team
+        * @returnval {String}  ftm-fta Average free throws made vs attempted per game
+        * @returnval {Float}   ft%     Percent of free throws made in range [0, 1]
+        * @returnval {Float}   3p%     Percent of 3 point shots made in range [0, 1]
+        * @returnval {Float}   fg%     Percent of field goals made in range [0, 1]
+        * @returnval {Float}   mpg     Average minutes of playing time per game
+
         *
         * @funcReturn:
           {
@@ -629,46 +639,45 @@ class Nba extends Sports {
         * @funcName listPlayers
         * @group    NBA
         *
-        * @params {String} callback optional Callback to handle response
+        * @params {Function} callback optional Callback to handle response
         *
-        * @funcSample NBA.list(callback)
+        * @funcSample Nba.listPlayers(callback)
         *
-        * @returnval {String} country
-        * @returnval {Array}  entities
+        * @returnval {Array}  players List of all current NBA players
         *
         * @funcReturn:
-        {
-          "country"  : "canada",
-          "entities" : [
-                         "asylum_applications",
-                         "balance_of_trade",
-                         "bank_lending_rate",
-                         "bankruptcies",
-                         "banks_balance_sheet"
-                       ]
-        }
+          {
+            "players" : [
+                          "aaron gordon",
+                          "al horford",
+                          "alec burks",
+                          "alex abrines",
+                          "alex len",
+                          "allen crabbe"
+                        ]
+          }
         */
 
         /**
-           * @funcName listPlayers
+           * @funcName listTeams
            * @group    NBA
            *
-           * @params {String} callback optional Callback to handle response
+           * @params {Function} callback optional Callback to handle response
            *
-           * @funcSample NBA.list(callback)
+           * @funcSample Nba.list(callback)
            *
-           * @returnval {String} country
-           * @returnval {Array}  entities
+           * @returnval {String} league League the returned teams belong to (NBA)
+           * @returnval {Array}  teams  List of all current NBA teams
            *
            * @funcReturn:
-           {
-             "country"  : "canada",
-             "entities" : [
-                            "asylum_applications",
-                            "balance_of_trade",
-                            "bank_lending_rate",
-                            "bankruptcies",
-                            "banks_balance_sheet"
+             {
+               "league" : "nba",
+               "teams"  : [
+                            "atl",
+                            "bkn",
+                            "bos",
+                            "cha",
+                            "chi"
                           ]
            }
            */
@@ -678,6 +687,162 @@ class Nhl extends Sports {
   constructor(apikey) {
     super("nhl", apikey)
   }
+
+  /**
+     * @funcName getTeam
+     * @group    NHL
+     *
+     * @params {String}   team      required The team the data returned corresponds to
+     * @params {Function} callback  optional Callback to handle response
+     *
+     * @funcSample Nhl.getTeam(team, callback)
+     *
+     * @returnval {String} team    Team the returned data corresponds to
+     * @returnval {Array}  players The players from <team> and their stats
+     *
+     * @funcReturn:
+      {
+         "team"    : "pit",
+         "players" : [
+                       {
+                         "pts/g"   : 1.23,
+                         "gp"      : 26,
+                         "goals"   : 11,
+                         "assists" : 21,
+                         "pim"     : 24,
+                         "name"    : "phil kessel",
+                         "pos"     : "rw",
+                         "ppa"     : 14,
+                         "points"  : 32,
+                         "gwg"     : 2,
+                         "shg"     : 0,
+                         "ppg"     : 3,
+                         "pct"     : 11.1,
+                         "team"    : "pit",
+                         "+/-"     : 2,
+                         "sha"     : 0,
+                         "sog"     : 99
+                       },
+                       {
+                         "pts/g"   : 0.96,
+                         "gp"      : 26,
+                         "goals"   : 10,
+                         "assists" : 15,
+                         "pim"     : 32,
+                         "name"    : "sidney crosby",
+                         "pos"     : "c",
+                         "ppa"     : 7,
+                         "points"  : 25,
+                         "gwg"     : 3,
+                         "shg"     : 0,
+                         "ppg"     : 6,
+                         "pct"     : 11.8,
+                         "team"    : "pit",
+                         "+/-"     : -10,
+                         "sha"     : 0,
+                         "sog"     : 85
+                       }
+                     ]
+            }
+     */
+
+     /**
+        * @funcName getPlayer
+        * @group    NHL
+        *
+        * @params {String}   player    required The player the data returned corresponds to
+        * @params {Function} callback  optional Callback to handle response
+        *
+        * @funcSample Nhl.getPlayer(player, callback)
+        *
+        * @returnval {Float}   pts/g   Points per game
+        * @returnval {Integer} gp      Games played
+        * @returnval {Integer} goals   Goals scored
+        * @returnval {Integer} assists Assists
+        * @returnval {Integer} pim     Penalty minutes
+        * @returnval {String}  name    Player anme
+        * @returnval {String}  pos     Position
+        * @returnval {Integer} ppa     Power play assists
+        * @returnval {Integer} points  Total points
+        * @returnval {Integer} gwg     Game winning goals
+        * @returnval {Integer} shg     Short handed goals
+        * @returnval {Integer} ppg     Power play goals
+        * @returnval {Float}   pct     Shooting percentage
+        * @returnval {String}  team    Team
+        * @returnval {Integer} +/-     Plus/minus rating
+        * @returnval {Integer} sha     Short handed assists
+        * @returnval {Integer} sog     Shots on goal
+        *
+        * @funcReturn:
+        {
+          "pts/g"   : 0.96,
+          "gp"      : 26,
+          "goals"   : 10,
+          "assists" : 15,
+          "pim"     : 32,
+          "name"    : "sidney crosby",
+          "pos"     : "c",
+          "ppa"     : 7,
+          "points"  : 25,
+          "gwg"     : 3,
+          "shg"     : 0,
+          "ppg"     : 6,
+          "pct"     : 11.8,
+          "team"    : "pit",
+          "+/-"     : -10,
+          "sha"     : 0,
+          "sog"     : 85
+        }
+
+        */
+
+     /**
+        * @funcName listPlayers
+        * @group    NHL
+        *
+        * @params {Function} callback optional Callback to handle response
+        *
+        * @funcSample Nhl.listPlayers(callback)
+        *
+        * @returnval {Array}  players List of all current NHL players
+        *
+        * @funcReturn:
+          {
+            "players" : [
+                          "a.j. greer",
+                          "aaron ekblad",
+                          "aaron ness",
+                          "adam clendening",
+                          "adam henrique"
+                        ]
+          }
+        */
+
+        /**
+           * @funcName listTeams
+           * @group    NBA
+           *
+           * @params {Function} callback optional Callback to handle response
+           *
+           * @funcSample Nhl.list(callback)
+           *
+           * @returnval {String} league League the returned teams belong to (NHL)
+           * @returnval {Array}  teams  List of all current NHL teams
+           *
+           * @funcReturn:
+             {
+               "league" : 'nba',
+               "teams"  : [
+                            "ana",
+                            "ari",
+                            "bos",
+                            "buf",
+                            "car",
+                            "chi"
+                          ]
+           }
+           */
+
 }
 
 class SportsPos extends Sports {
@@ -687,21 +852,16 @@ class SportsPos extends Sports {
 
   getTeam(team, position, cb) {
 
-    let callback = (typeof(period) == 'function' && cb == null) ? period : cb
-    let per      = (period == null || typeof(period) == 'function')? 'last' : period
 
-    return utils.getDatavideApi(`sports/${this.league}/team/${position}/${team}`, this.apikey, callback);
+    return utils.getDatavideApi(`sports/${this.league}/team/${position}/${team}`, this.apikey, cb);
   }
 
   getPlayer(player, position, cb) {
 
-    let callback = (typeof(period) == 'function' && cb == null) ? period : cb
-    let per      = (period == null || typeof(period) == 'function')? 'last' : period
-
-    return utils.getDatavideApi(`sports/${this.league}/player/${position}/${player}`, this.apikey, callback);
+    return utils.getDatavideApi(`sports/${this.league}/player/${position}/${player}`, this.apikey, cb);
   }
 
-  listPlayers(cb, position) {
+  listPlayers(position, cb) {
     return utils.getDatavideApi(`sports/${this.league}/players/${position}`, this.apikey, cb);
   }
 }
@@ -710,12 +870,303 @@ class Mlb extends SportsPos {
   constructor(apikey) {
     super("mlb", apikey)
   }
+
+  /**
+     * @funcName getTeam
+     * @group    MLB
+     *
+     * @params {String}   team      required The team the data returned corresponds to
+     * @params {String}   position  required The position of desired players (batting or pitching)
+     * @params {Function} callback  optional Callback to handle response
+     *
+     * @funcSample Mlb.getTeam(team, position, callback)
+     *
+     * @returnval {String} team    Team the returned data corresponds to
+     * @returnval {Array}  players The players from <team> and their stats
+     *
+     * @funcReturn:
+       {
+         "team"    : "bos",
+         "players" : [
+                     {
+                       "r"    : 73,
+                       "gp"   : 32,
+                       "ip"   : 214.1,
+                       "era"  : 2.9,
+                       "bb"   : 43,
+                       "er"   : 69,
+                       "whip" : 0.97,
+                       "name" : "chris sale",
+                       "w"    : 17,
+                       "blsv" : 0,
+                       "war"  : 0,
+                       "so"   : 308,
+                       "l"    : 8,
+                       "team" : "bos",
+                       "h"    : 165,
+                       "sv"   : 0,
+                       "gs"   : 32
+                     },
+                     {
+                       "r"    : 69,
+                       "gp"   : 32,
+                       "ip"   : 173.2,
+                       "era"  : 3.32,
+                       "bb"   : 69,
+                       "er"   : 64,
+                       "whip" : 1.35,
+                       "name" : "drew pomeranz",
+                       "w"    : 17,
+                       "blsv" : 0,
+                       "war"  : 0,
+                       "so"   : 174,
+                       "l"    : 6,
+                       "team" : "bos",
+                       "h"    : 166,
+                       "sv"   : 0,
+                       "gs"   : 32 },
+
+                     }
+                  ]
+       }
+     */
+
+     /**
+        * @funcName getPlayer
+        * @group    MLB
+        *
+        * @params {String}   player    required The player the data returned corresponds to
+        * @params {String}   position    required The position of desired players (batting or pitching)
+        * @params {Function} callback  optional Callback to handle response
+        *
+        * @funcSample Mlb.getPlayer(player, position, callback)
+        *
+        * @returnval {Integer} r    Runs
+        * @returnval {Integer} gp   Games played
+        * @returnval {Float}   ip   Innings pitched
+        * @returnval {Float}   era  Earned run average
+        * @returnval {Integer} bb   Walks
+        * @returnval {Integer} er   Earned runs
+        * @returnval {Float}   whip Walks and hits per innings pitched
+        * @returnval {String}  name Player name
+        * @returnval {Integer} w    Wins
+        * @returnval {Integer} blsv Blown saves
+        * @returnval {Integer} so   Strikeouts
+        * @returnval {Integer} hld  Holds
+        * @returnval {Integer} l    Losses
+        * @returnval {Float}   team Team
+        * @returnval {Integer} h    Hits
+        * @returnval {Integer} sv   Saves
+        * @returnval {Integer} gs   Games started
+        *
+        * @funcReturn:
+        {
+          "r"    : 73,
+          "gp"   : 32,
+          "ip"   : 214.1,
+          "era"  : 2.9,
+          "bb"   : 43,
+          "er"   : 69,
+          "whip" : 0.97,
+          "name" : "chris sale",
+          "w"    : 17,
+          "blsv" : 0,
+          "so"   : 308,
+          "hld"  : 0,
+          "l"    : 8,
+          "team" : "bos",
+          "h"    : 165,
+          "sv"   : 0,
+          "gs"   : 32
+        }
+
+        */
+
+     /**
+        * @funcName listPlayers
+        * @group    MLB
+        *
+        * @params {String}   position required Position of desired players (batting or pitching)
+        * @params {Function} callback optional Callback to handle response
+        *
+        * @funcSample Mlb.listPlayers(position, callback)
+        *
+        * @returnval {Array}  players List of all current MLB <position> players
+        *
+        * @funcReturn:
+           {
+             "players" : [
+                           "aaron nola",
+                           "alex cobb",
+                           "andrew cashner",
+                           "carlos carrasco"
+                         ]
+           }
+
+        */
+
+        /**
+           * @funcName listTeams
+           * @group    MLB
+           *
+           * @params {Function} callback optional Callback to handle response
+           *
+           * @funcSample Mlb.list(callback)
+           *
+           * @returnval {String} league League the returned teams belong to (MLB)
+           * @returnval {Array}  teams  List of all current MLB teams
+           *
+           * @funcReturn:
+              {
+                "league": "mlb",
+                "teams" : [
+                            "ari",
+                            "atl",
+                            "bal",
+                            "bos",
+                            "chc"
+                          ]
+              }
+           */
+
 }
 
 class Nfl extends SportsPos {
   constructor(apikey) {
     super("nfl", apikey)
   }
+
+  /**
+     * @funcName getTeam
+     * @group    NFL
+     *
+     * @params {String}   team      required The team the data returned corresponds to
+     * @params {String}   position  required The position of desired players (rushing or passing)
+     * @params {Function} callback  optional Callback to handle response
+     *
+     * @funcSample Nfl.getTeam(team, position, callback)
+     *
+     * @returnval {String} team    Team the returned data corresponds to
+     * @returnval {Array}  players The players from <team> and their stats
+     *
+     * @funcReturn:
+       {
+         "team"    : "ne",
+         "players" : [
+                      {
+                        "completionPercentage" : 68.4,
+                        "interceptionsThrown"  : 3,
+                        "passingYardsPerGame"  : 307,
+                        "name"                 : "tom brady",
+                        "yardsPerAttempt"      : 8.27,
+                        "attempts"             : 408,
+                        "pos"                  : "qb",
+                        "passerRating"         : 111.7,
+                        "passingTouchdowns"    : 26,
+                        "team"                 : "ne",
+                        "sacks"                : 24,
+                        "passingYards"         : 3374,
+                        "longestPass"          : 64,
+                        "completions"          : 279
+                      }
+                    ]
+
+       }
+     */
+
+     /**
+        * @funcName getPlayer
+        * @group    NFL
+        *
+        * @params {String}   player    required The player the data returned corresponds to
+        * @params {String}   position  required The position of desired players (rushing or passing)
+        * @params {Function} callback  optional Callback to handle response
+        *
+        * @funcSample Nfl.getPlayer(player, position, callback)
+        *
+        * @returnval {Float}   completionPercentage Percent of passes completed
+        * @returnval {Integer} interceptionsThrown  Interceptions thrown
+        * @returnval {Integer} passingYardsPerGame  Passing yards per game
+        * @returnval {String}  name                 Player name
+        * @returnval {Float}   yardsPerAttempt      Yards per passing attempt
+        * @returnval {Integer} attempts             Passing attempts
+        * @returnval {String}  pos                  Position
+        * @returnval {Float}   passerRating         Passer rating
+        * @returnval {Integer} passingTouchdowns    Passing touchdowns
+        * @returnval {String}  team                 Team
+        * @returnval {Integer} sacks                Sacks
+        * @returnval {Integer} passingYards         Total passing yards
+        * @returnval {Integer} longestPass          Longest pass
+        * @returnval {Integer} completions          Completed passes
+        *
+        * @funcReturn:
+        {
+          "completionPercentage" : 68.4,
+          "interceptionsThrown"  : 3,
+          "passingYardsPerGame"  : 307,
+          "name"                 : "tom brady",
+          "yardsPerAttempt"      : 8.27,
+          "attempts"             : 408,
+          "pos"                  : "qb",
+          "passerRating"         : 111.7,
+          "passingTouchdowns"    : 26,
+          "team"                 : "ne",
+          "sacks"                : 24,
+          "passingYards"         : 3374,
+          "longestPass"          : 64,
+          "completions"          : 279
+        }
+
+        */
+
+     /**
+        * @funcName listPlayers
+        * @group    NFL
+        *
+        * @params {String}   position required Position of desired players (batting or pitching)
+        * @params {Function} callback optional Callback to handle response
+        *
+        * @funcSample Nfl.listPlayers(position, callback)
+        *
+        * @returnval {Array}  players List of all current NFL <position> players
+        *
+        * @funcReturn:
+           {
+             "players" : [
+                          "aaron rodgers",
+                          "alex smith",
+                          "andy dalton",
+                          "ben roethlisberger",
+                          "blaine gabbert"
+                        ]
+           }
+
+        */
+
+        /**
+           * @funcName listTeams
+           * @group    NFL
+           *
+           * @params {Function} callback optional Callback to handle response
+           *
+           * @funcSample Nfl.list(callback)
+           *
+           * @returnval {String} league League the returned teams belong to (NFL)
+           * @returnval {Array}  teams  List of all current NFL teams
+           *
+           * @funcReturn:
+              {
+                "league" : "mlb",
+                "teams"  : [
+                             "ari",
+                             "atl",
+                             "bal",
+                             "buf",
+                             "car",
+                           ]
+              }
+           */
+
 }
 
 
